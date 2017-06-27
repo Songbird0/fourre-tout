@@ -56,4 +56,21 @@ if __name__ == '__main__':
         assert btgB == 1.0, "btgB is equal to %s." % btgB
         gbtmB = gbToMB(1)
         assert gbtmB == 125.0, "gbtmB is equal to %s." % gbtmB
-        
+        parser = argparse.ArgumentParser(prog='BytesConverter', description= """
+Convertisseur d'unité de mesure de bande passante.
+La bande passante (réseau) est très souvent exprimée en Mbit/s ou Mbitps ou encore
+Gbit/s.
+Cet utilitaire a pour but de convertir ces données en unités plus intelligibles,
+comme le Mo, le Ko ou le Go.
+""")
+        parser.add_argument('-mbmo', type=float, nargs=1, metavar='<N Mbits>', help='''
+Convertit N Mbits en Mo. La valeur en Mbits doit forcément être flottante. Si,
+de base, elle ne l'est pas, ajoutez une virgule. Exemple:
+10Mbits => écrivez 10.0
+''')
+        args = parser.parse_args()
+        submittedValue = args.mbmo[0]
+        convertedValue = mbToMB(submittedValue)
+        print("""
+{0}Mbits(mega bits) vaut {1}Mo(mega octects).
+""".format(submittedValue, convertedValue))
