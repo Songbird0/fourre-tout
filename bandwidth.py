@@ -41,21 +41,21 @@ def gbToMB(gb):
 
 if __name__ == '__main__':
         btB = bitsToB(80)
-        assert btB == 10.0, "btB is equal to %s.".format(btB)
+        assert btB == 10.0, "btB is equal to {0}.".format(btB)
         btkb = bitsToKb(1000)
-        assert btkb == 1.0, "btkb is equal to %s.".format(btkb)
+        assert btkb == 1.0, "btkb is equal to {0}.".format(btkb)
         btkB = bitsToKB(10000 * 8)
-        assert btkB == 10.0, "btkB is equal to %s.".format(btkB)
+        assert btkB == 10.0, "btkB is equal to {0}.".format(btkB)
         btmb = bitsToMb(1000000)
-        assert btmb == 1.0, "btmb is equal to %s.".format(btmb)
+        assert btmb == 1.0, "btmb is equal to {0}.".format(btmb)
         btmB = bitsToMB(1000000 * 8)
-        assert btmB == 1.0, "btmB is equal to %s." % btmB
+        assert btmB == 1.0, "btmB is equal to {0}.".format(btmB)
         btgb = bitsToGb(1000000000)
-        assert btgb == 1.0, "btgb is equal to %s." % btgb
+        assert btgb == 1.0, "btgb is equal to {0}.".format(btgb)
         btgB = bitsToGB(1000000000 * 8)
-        assert btgB == 1.0, "btgB is equal to %s." % btgB
+        assert btgB == 1.0, "btgB is equal to {0}.".format(btgB)
         gbtmB = gbToMB(1)
-        assert gbtmB == 125.0, "gbtmB is equal to %s." % gbtmB
+        assert gbtmB == 125.0, "gbtmB is equal to {0}.".format(gbtmB)
         parser = argparse.ArgumentParser(prog='BytesConverter', description= """
 Convertisseur d'unité de mesure de bande passante.
 La bande passante (réseau) est très souvent exprimée en Mbit/s ou Mbitps ou encore
